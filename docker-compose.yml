@@ -2,15 +2,9 @@ version: '3.8'
 
 services:
   devbox:
-    image: ubuntu:latest
+    build: .
     container_name: devbox
     tty: true  # Keeps the container running for interaction
     stdin_open: true  # Allows interactive exec
     volumes:
-      - ./shared:/mnt/shared  # Keeps the container running for interaction
-    command: >
-      bash -c "
-      apt update &&
-      apt install -y vim rsync grep curl git less man tree htop net-tools iputils-ping procps &&
-      bash"
-
+      - ./shared:/mnt/shared
