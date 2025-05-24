@@ -42,7 +42,8 @@ docker system prune -a --volumes
 crontab -e
 
 
-*/5 * * * * /mnt/shared/system_status_logger.sh >> /dev/null 2>&1
+*/1 * * * * /mnt/shared/system_status_logger.sh >> /dev/null  2>&1
+
 
 
 ```
