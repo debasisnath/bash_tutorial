@@ -10,6 +10,9 @@ docker compose up -d
 
 docker compose down
 
+# Rebuild
+docker compose build
+
 
 docker ps -a 
 
@@ -32,3 +35,22 @@ docker system prune -a --volumes
 
 
 ```
+
+####   Add the Cron Job
+```bash
+
+crontab -e
+
+
+*/5 * * * * /mnt/shared/system_status_logger.sh >> /dev/null 2>&1
+
+
+```
+
+
+## Manually start cron after running the container
+```bash 
+service cron start
+crontab -e
+```
+
